@@ -6,9 +6,13 @@ torrentTV is a COMP241-14A group project managed by Steven Crake (4th year BE-So
 Group members:
 -----------------
 Peter Oomen
+
 Jordan Crawford
+
 Lucas Oliveira
+
 Thye Way Phua
+
 
 Description:
 -----------------
