@@ -2,7 +2,7 @@ import java.util.*;
 
 public class DoTVRetrieve extends TimerTask {
 	public Configuration toSend = null;
-	boolean runFirstTime = true;
+	boolean runFirstTime = false;
 	int timesSinceOutputSchedule = 0;
 	public void run()
 	{
