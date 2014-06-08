@@ -96,6 +96,9 @@ public class Retrieve extends Thread {
         	}
         	System.out.println("Recording scheduled. Waiting...");
         	
+        	Date timeOfRecording = Calendar.getInstance().getTime();
+        	timeOfRecording.setTime(timeOfRecording.getTime() + 1000*60*minutesUntilStartRecording);
+        	
         	// Wait
         	int minutesToWait = (minutesUntilStartRecording - timeEitherSide) + (2*timeEitherSide + recordTime) + 1; 
         	try
@@ -130,9 +133,8 @@ public class Retrieve extends Thread {
         	int year = Integer.parseInt((new SimpleDateFormat("y").format(Calendar.getInstance().getTime())));
         	int month = Integer.parseInt((new SimpleDateFormat("M").format(Calendar.getInstance().getTime())));
         	int day = Integer.parseInt(new SimpleDateFormat("d").format(Calendar.getInstance().getTime()));
-        	String time = (new SimpleDateFormat("HHmm").format(Calendar.getInstance().getTime()));
         	
-
+        	String time = (new SimpleDateFormat("HHmm").format(timeOfRecording));
         	String outputFileName = "channel_" + config.getString("epg_channel_id") + "_year_" + year + "_mon_" + month + "_day_" + day + "_" + time + ".mp4";
         	
         	String outputFilePath = config.getString("library_location") + outputFileName;
